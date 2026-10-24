@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Cloud - Matraslar do'koni</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <i class="fa-solid fa-cloud"></i> DREAM CLOUD
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+                <nav class="nav" id="mobileNav">
+                    <ul>
+                        <li><a href="#katalog" onclick="toggleMenu()">Katalog</a></li>
+                        <li><a href="#aksiya-qismi" onclick="toggleMenu()">Aksiya</a></li>
+                        <li><a href="#haqimizda" onclick="toggleMenu()">Biz haqimizda</a></li>
+                        <li><a href="#manzil" onclick="toggleMenu()">Manzilimiz</a></li>
+                        <li><a href="#aloqa" onclick="toggleMenu()">Aloqa</a></li>
+                        <li class="mobile-only-contact">
+                            <a href="tel:+998901234567"><i class="fa-solid fa-phone"></i> +998 90 123 45 67</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-contact desktop-only">
+                    <a href="tel:+998901234567"><i class="fa-solid fa-phone"></i> +998 90 123 45 67</a>
+                    <button class="btn btn-outline" onclick="openModal()">Buyurtma berish</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1>Kechalari sokin<br>dam oling</h1>
+                <a href="#katalog" class="btn btn-white" style="display: inline-block;">Kategoriyalar <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80" alt="Sokin yotoqxona va matras" class="hero-img-tag">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-inner">
+            <div class="stat-item">
+                <h2>7</h2>
+                <p>yillik tajriba</p>
+            </div>
+            <div class="stat-item">
+                <h2>10k+</h2>
+                <p>mamnun mijozlar</p>
+            </div>
+            <div class="stat-item">
+                <h2>10</h2>
+                <p>yillik kafolat</p>
+            </div>
+            <div class="stat-item">
+                <h2>3</h2>
+                <p>kunda yetkazish</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="katalog" class="products">
+        <div class="container">
+            <h2 class="section-title">Bizning mahsulotlar</h2>
+            
+            <div class="tabs">
+                <button class="tab active" onclick="filterProducts('all', this)">Barchasi</button>
+                <button class="tab" onclick="filterProducts('ortopedik', this)">Ortopedik</button>
+                <button class="tab" onclick="filterProducts('bolalar', this)">Bolalar uchun</button>
+                <button class="tab" onclick="filterProducts('premium', this)">Premium</button>
+                <button class="tab" onclick="filterProducts('aksiya', this)">Aksiya</button>
+            </div>
+
+            <div class="product-list" id="productList">
+                <!-- Product Card 1: Ortopedik -->
+                <div class="product-card" data-category="ortopedik premium">
+                    <span class="badge new">YANGI MAHSULOT</span>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80" alt="Ortopedik Eko matras">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ortopedik Eko matras</h3>
+                        <div class="product-specs">
+                            <div class="spec"><span>Yuklama</span><br><strong>150 kg</strong></div>
+                            <div class="spec"><span>Kafolat</span><br><strong>3 yil</strong></div>
+                            <div class="spec"><span>O'lchami</span><br><strong>200x120x40</strong></div>
+                            <div class="spec"><span>Sig'imi</span><br><strong>2 kishilik</strong></div>
+                        </div>
+                        <p class="product-desc">Yuqori sifatli eko-materiallardan tayyorlangan ortopedik matras. Umurtqa pog'onasi uchun maksimal qulaylik va to'g'ri joylashuvni ta'minlaydi. Antiallergik xususiyatga ega.</p>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span>Narxi</span>
+                                <strong>1 699 999 <span>so'm</span></strong>
+                            </div>
+                            <button class="btn btn-dark" onclick="openModal()"><i class="fa-solid fa-cart-shopping"></i> Buyurtma berish</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Bolalar uchun -->
+                <div class="product-card" data-category="bolalar">
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzbZwv0_YhuO5PaUDaA5ggced9gRtH27F9dFdb9BdPdA&s" alt="Bolalar matrasi">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolalar matrasi (Baby Cloud)</h3>
+                        <div class="product-specs">
+                            <div class="spec"><span>Yuklama</span><br><strong>50 kg</strong></div>
+                            <div class="spec"><span>Kafolat</span><br><strong>2 yil</strong></div>
+                            <div class="spec"><span>O'lchami</span><br><strong>120x60x15</strong></div>
+                            <div class="spec"><span>Sig'imi</span><br><strong>1 kishilik</strong></div>
+                        </div>
+                        <p class="product-desc">Kichkintoylar uchun maxsus ishlab chiqilgan, umurtqaning to'g'ri rivojlanishiga yordam beruvchi qulay va paxtali eko-matras.</p>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span>Narxi</span>
+                                <strong>699 999 <span>so'm</span></strong>
+                            </div>
+                            <button class="btn btn-dark" onclick="openModal()"><i class="fa-solid fa-cart-shopping"></i> Buyurtma berish</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3: Aksiya va Premium -->
+                <div class="product-card" id="aksiya-qismi" data-category="premium aksiya">
+                    <span class="badge sale">AKSIYA</span>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Lux Soft matras">
+                    </div>
+                    <div class="product-info">
+                        <h3>Lux Soft Memory</h3>
+                        <div class="product-specs">
+                            <div class="spec"><span>Yuklama</span><br><strong>120 kg</strong></div>
+                            <div class="spec"><span>Kafolat</span><br><strong>5 yil</strong></div>
+                            <div class="spec"><span>Balandligi</span><br><strong>38 cm</strong></div>
+                            <div class="spec"><span>Sig'imi</span><br><strong>3 kishilik</strong></div>
+                        </div>
+                        <p class="product-desc">Xotira ko'pigi (Memory Foam) texnologiyasi bilan jihozlangan premium toifadagi matras. Tana shaklini mukammal eslab qoladi va qon aylanishini yaxshilaydi. Aksiya doirasida chegirma!</p>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span>Narxi</span>
+                                <s>1 999 999 so'm</s>
+                                <strong>1 299 999 <span>so'm</span></strong>
+                            </div>
+                            <button class="btn btn-dark" onclick="openModal()"><i class="fa-solid fa-cart-shopping"></i> Xarid qilish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies bg-light">
+        <div class="container">
+            <h2 class="section-title">Ishlab chiqarish texnologiyalari</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h3>Memoriform</h3>
+                    <div class="tech-img">
+                        <<video
+                                src="gemini_generated_video_dbe39c92.mp4"
+                                controls
+                                style="width: 100%; max-width: 300px"
+                            ></video>
+                        
+                    </div>
+                    <p>Inson tanasi shaklini takrorlaydigan maxsus texnologiya. Tana og'irligini teng taqsimlab, chuqur va tinch uyquni kafolatlaydi.</p>
+                </div>
+                <div class="tech-item">
+                    <h3>Tabiiy lateks</h3>
+                    <div class="tech-img">
+                        <video
+                                src="gemini_generated_video_dbe39c92.mp4"
+                                controls
+                                style="width: 100%; max-width: 300px"
+                            ></video>
+                        
+                    </div>
+                    <p>Gedveya daraxti sharbatidan olinadigan 100% tabiiy material. Ekologik toza, nafas oluvchi va uzoq muddat xizmat qiladi.</p>
+                </div>
+                <div class="tech-item">
+                    <h3>Mustaqil prujina</h3>
+                    <div class="tech-img">
+                       <video
+                                src="gemini_generated_video_dbe39c92.mp4"
+                                controls
+                                style="width: 100%; max-width: 300px"
+                            ></video>
+                        
+                    </div>
+                    <p>Har bir prujina alohida qopchada joylashgan bo'lib, sherigingizning harakatini sezmaysiz. Mukammal ortopedik yordam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Company Section -->
+    <section id="haqimizda" class="about">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-content">
+                    <h2 class="section-title" style="text-align: left;">Dream Cloud kompaniyasi haqida</h2>
+                    <p class="about-desc">Biz 2017 yildan beri O'zbekiston bozorida yuqori sifatli va zamonaviy matraslar ishlab chiqarish bilan shug'ullanamiz. Asosiy maqsadimiz — xalqimizga sog'lom va shinam uyqu ulashish.</p>
+                    <ul class="about-list">
+                        <li><i class="fa-solid fa-check"></i> Xalqaro standartlarga javob beradigan materiallar.</li>
+                        <li><i class="fa-solid fa-check"></i> Germaniya texnologiyasi asosida ishlab chiqarish.</li>
+                        <li><i class="fa-solid fa-check"></i> Har bir mijoz uchun individual yondashuv.</li>
+                        <li><i class="fa-solid fa-check"></i> Ekologik toza va xavfsiz mahsulotlar.</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80" alt="Kompaniya haqida" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features bg-light">
+        <div class="container">
+            <h2 class="section-title">Nega bizni tanlashadi</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=500&q=80" alt="Yetkazib berish">
+                    <div class="feature-body">
+                        <h3>Yetkazib berish</h3>
+                        <p>Toshkent va Urganch bo'ylab bepul o'lchov va tezkor yetkazib berish xizmati. O'z vaqtida va xavfsiz.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=500&q=80" alt="Qo'llab-quvvatlash">
+                    <div class="feature-body">
+                        <h3>Qo'llab-quvvatlash</h3>
+                        <p>Bizning mutaxassislar sizga to'g'ri matras tanlashda 24/7 yordam berishga tayyor.</p>
+                        <a href="tel:+998901234567" class="phone-link">+998 90 123-45-67</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=500&q=80" alt="Kafolat">
+                    <div class="feature-body">
+                        <h3>Kafolat</h3>
+                        <p>Biz matraslarimiz uchun 10 yilgacha rasmiy kafolat beramiz. Sifatga javob beramiz!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section (Yangilandi: Urganch shahri) -->
+    <section id="manzil" class="location">
+        <div class="container">
+            <h2 class="section-title" style="text-align: left;">Manzilimiz</h2>
+            <div class="location-inner">
+                <div class="location-info">
+                    <h3>Xorazm viloyati, Urganch shahri</h3>
+                    <p>Mo'ljal: Urganch shahar markazi.</p>
+                    <a href="https://www.google.com/maps/place/Urgench,+Uzbekistan" target="_blank" class="btn btn-outline" style="margin-top: 20px; display: inline-block;"><i class="fa-solid fa-location-dot"></i> Geolokatsiya</a>
+                </div>
+                <div class="location-map">
+                    <a href="https://www.google.com/maps/place/Urgench,+Uzbekistan" target="_blank" style="display: block; position: relative;">
+                        <!-- Xarita ko'rinishidagi rasm -->
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" alt="Urganch xaritasi" style="width: 100%; border-radius: 12px; transition: transform 0.3s;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 59, 92, 0.8); color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; pointer-events: none;">
+                            Xaritada ko'rish
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA Section -->
+    <section id="aloqa" class="cta" style="background: #eecba8; padding: 60px 0;">
+        <div class="container cta-inner">
+            <div class="cta-text">
+                <h2>Sizni qiziqtirdimi?</h2>
+                <p>Raqamingizni qoldiring, biz sizga yana qo'ng'iroq qilamiz va barcha savollaringizga javob beramiz.</p>
+            </div>
+            <div class="cta-form">
+                <input type="text" placeholder="+998 | Raqamingizni yozing">
+                <button class="btn btn-dark">Yuborish</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-links">
+                <a href="#haqimizda">Biz haqimizda</a>
+                <a href="#katalog">Katalog</a>
+                <a href="#katalog">Aksiya</a>
+                <a href="#manzil">Manzilimiz</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dream Cloud. Barcha huquqlar himoyalangan.</p>
+            <a href="#" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color: #003b5c; margin-bottom: 20px; text-align: center;">Buyurtma qilish</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Ismingizni yozing" required>
+                </div>
+                <div class="form-group" style="display: flex;">
+                    <span style="background: #003b5c; color: white; padding: 10px; border-radius: 4px 0 0 4px;">+998</span>
+                    <input type="text" placeholder="Raqamingizni yozing" style="border-radius: 0 4px 4px 0; width: 100%;" required>
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 12px; color: #003b5c; font-weight: 600;">Mahsulot toifasini tanlang</label>
+                    <select>
+                        <option>Ortopedik Eko matras</option>
+                        <option>Bolalar matrasi</option>
+                        <option>Lux Soft Memory</option>
+                    </select>
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px; align-items: center;">
+                    <label style="font-size: 12px; color: #003b5c; font-weight: 600; width: 100px;">Miqdorni tanlang</label>
+                    <button type="button" style="padding: 5px 15px; border: 1px solid #ccc; background: #fff; cursor: pointer;">-</button>
+                    <input type="number" value="1" style="width: 50px; text-align: center;" min="1">
+                    <button type="button" style="padding: 5px 15px; border: 1px solid #ccc; background: #fff; cursor: pointer;">+</button>
+                </div>
+                <button type="submit" class="btn btn-dark" style="width: 100%; margin-top: 10px;">Yuborish</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close" onclick="closeSuccessModal()">&times;</span>
+            <h2 style="color: #003b5c; margin-bottom: 20px;">Arizangiz muvaffaqiyatli yuborildi!</h2>
+            <div style="margin: 20px 0;">
+                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Muvaffaqiyatli" style="height: 100px;">
+            </div>
+            <p style="margin-bottom: 20px; color: #666;">Tez orada operatorlarimiz siz bilan bog'lanishadi.</p>
+            <button class="btn btn-dark" onclick="closeSuccessModal()">Ok</button>
+        </div>
+    </div>
+
+    <!-- Flotting Mobile Order Btn -->
+    <button class="mobile-floating-btn" onclick="openModal()"><i class="fa-solid fa-cart-shopping"></i> Buyurtma</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
